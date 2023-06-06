@@ -1,6 +1,10 @@
-# XJar [![](https://jitpack.io/v/core-lib/xjar.svg)](https://jitpack.io/#core-lib/xjar)
-GitHub: https://github.com/core-lib/xjar
+# XJar
+GitHub: https://github.com/iamxiaojianzheng/xjar
+
+### Fork原作者项目，对spring-boot-loader-2.2.x之后的版本做了兼容，解决ClassFor
+
 ### Spring Boot JAR 安全加密运行工具, 同时支持的原生JAR.
+
 ### 基于对JAR包内资源的加密以及拓展ClassLoader来构建的一套程序加密启动, 动态解密运行的方案, 避免源码泄露以及反编译.
 
 ## 功能特性
@@ -19,25 +23,18 @@ JDK 1.7 +
 #### 1. 添加依赖
 ```xml
 <project>
-    <!-- 设置 jitpack.io 仓库 -->
-    <repositories>
-        <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
-        </repository>
-    </repositories>
     <!-- 添加 XJar 依赖 -->
     <dependencies>
         <dependency>
-            <groupId>com.github.core-lib</groupId>
+            <groupId>com.xiaojianzheng</groupId>
             <artifactId>xjar</artifactId>
-            <version>4.0.2</version>
+            <version>4.0.3</version>
             <!-- <scope>test</scope> -->
         </dependency>
     </dependencies>
 </project>
 ```
-* 必须添加 https://jitpack.io Maven仓库.
+
 * 如果使用 JUnit 测试类来运行加密可以将 XJar 依赖的 scope 设置为 test.
 
 #### 2. 加密源码
@@ -171,8 +168,8 @@ xjar java --add-opens java.base/jdk.internal.loader=ALL-UNNAMED -jar /path/to/en
 ```
 
 ## 插件集成
-#### Maven项目可通过集成 [xjar-maven-plugin](https://github.com/core-lib/xjar-maven-plugin) 以免去每次加密都要执行一次上述的代码, 随着Maven构建自动生成加密后的JAR和Go启动器源码文件.
-[xjar-maven-plugin](https://github.com/core-lib/xjar-maven-plugin) GitHub: https://github.com/core-lib/xjar-maven-plugin
+#### Maven项目可通过集成 [xjar-maven-plugin](https://github.com/iamxiaojianzheng/xjar-maven-plugin) 以免去每次加密都要执行一次上述的代码, 随着Maven构建自动生成加密后的JAR和Go启动器源码文件.
+[xjar-maven-plugin](https://github.com/iamxiaojianzheng/xjar-maven-plugin) GitHub: https://github.com/iamxiaojianzheng/xjar-maven-plugin
 ```xml
 <project>
     <!-- 设置 jitpack.io 插件仓库 -->
@@ -186,9 +183,9 @@ xjar java --add-opens java.base/jdk.internal.loader=ALL-UNNAMED -jar /path/to/en
     <build>
         <plugins>
             <plugin>
-                <groupId>com.github.core-lib</groupId>
+                <groupId>com.xiaojianzheng</groupId>
                 <artifactId>xjar-maven-plugin</artifactId>
-                <version>4.0.2</version>
+                <version>4.0.3</version>
                 <executions>
                     <execution>
                         <goals>
@@ -259,7 +256,7 @@ mvn clean install -Dxjar.password=io.xjar -Dxjar.targetDir=/directory/to/save/ta
 * 指定加密算法的时候密钥长度以及向量长度必须在算法可支持范围内, 具体加密算法的密钥及向量长度请自行百度或谷歌.
 * 当 includes 和 excludes 同时使用时即加密在includes的范围内且排除了excludes的资源.
 
-更多文档：[xjar-maven-plugin](https://github.com/core-lib/xjar-maven-plugin)
+更多文档：[xjar-maven-plugin](https://github.com/iamxiaojianzheng/xjar-maven-plugin)
 
 ## 版本记录
 * 4.0.2
