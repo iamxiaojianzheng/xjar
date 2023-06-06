@@ -16,7 +16,7 @@ GitHub: https://github.com/iamxiaojianzheng/xjar
 * 动态生成Go启动器, 保护密码不泄露.
 
 ## 环境依赖
-JDK 1.7 +
+JDK 1.8 +
 
 ## 使用步骤
 
