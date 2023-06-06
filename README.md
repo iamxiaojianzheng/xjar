@@ -1,7 +1,7 @@
 # XJar
 GitHub: https://github.com/iamxiaojianzheng/xjar
 
-### Fork原作者项目，对spring-boot-loader-2.2.x之后的版本做了兼容，解决ClassFor
+### Fork原作者项目，对spring-boot-loader-2.2.x之后的版本做了兼容，解决不兼容报错：`Exception in thread "main" java.lang.ClassFormatError: Incompatible magic value 2042300166 in class file`
 
 ### Spring Boot JAR 安全加密运行工具, 同时支持的原生JAR.
 
